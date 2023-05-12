@@ -5,12 +5,7 @@ import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
 
 // import ApolloProvider
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
+import {ApolloClient,InMemoryCache,ApolloProvider,createHttpLink,} from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 // Construct main GraphQL API endpoint
@@ -42,9 +37,18 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route exact path="/" component={SearchBooks} />
-            <Route exact path="/saved" component={SavedBooks} />
-            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+          <Route 
+              path="/" 
+              element={<SearchBooks/>} 
+            />
+            <Route 
+              path="/saved" 
+              element={<SavedBooks/>} 
+            />
+            <Route 
+              path='*' 
+              element={<h1 className="display-2">Wrong page!</h1>}
+            />
           </Routes>
         </>
       </Router>
