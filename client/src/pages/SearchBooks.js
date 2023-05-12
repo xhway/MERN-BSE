@@ -1,5 +1,5 @@
-import React,{ useState, useEffect } from "react";
-import {Container,Col,Form,Button,Card,CardGroup} from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import {Container,Col,Form,Button,Card, CardGroup,Row} from "react-bootstrap";
 
 import Auth from "../utils/auth";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
@@ -94,7 +94,7 @@ const SearchBooks = () => {
         <Container>
           <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
-            <Form.Row>
+            <Row>
               <Col xs={12} md={8}>
                 <Form.Control
                   name="searchInput"
@@ -110,7 +110,7 @@ const SearchBooks = () => {
                   Submit Search
                 </Button>
               </Col>
-            </Form.Row>
+            </Row>
           </Form>
         </Container>
       </div>
